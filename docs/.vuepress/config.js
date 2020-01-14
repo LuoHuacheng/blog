@@ -1,5 +1,5 @@
 module.exports = {
-  base: '/blog/',
+  base: process.env.NODE_DEV === 'production' ? '/blog/' : '/', 
   title: 'HC的前端之旅',
   description: 'Javascript, HTML, CSS, Vue, React, Flutter, NodeJs, 前端技术',
   themeConfig: {
@@ -10,22 +10,65 @@ module.exports = {
       { text: '框架', link: '/frame/' },
       { text: '其他', link: '/other/' },
     ],
+    sidebarDepth: 3,
     sidebar: {
       '/advanced/': [],
       '/basic/': [
-        '1-layout/',
-        '2-box/',
-        '3-event/',
-        '4-http/',
-        '5-prototype/',
-        '6-oop/',
-        '7-comm/',
-        '8-security/',
-        '9-algorithm/',
-        '10-rendering/',
-        '11-execution/',
-        '12-performance/',
-        '13-errorhandling/',
+        {
+          title: '页面布局',
+          children: [
+            '1-layout/center',
+            '1-layout/column',
+          ],
+        },
+        {
+          title: '盒模型',
+          path: '2-box/',
+        },
+        {
+          title: 'DOM事件',
+          path: '3-event/',
+        },
+        {
+          title: 'HTTP',
+          path: '4-http/',
+        },
+        {
+          title: '原型/原型链',
+          path: '5-prototype/',
+        },
+        {
+          title: '对向对象',
+          path: '6-oop/',
+        },
+        {
+          title: '前后端通信',
+          path: '7-comm/',
+        },
+        {
+          title: 'web安全',
+          path: '8-security/',
+        },
+        {
+          title: '算法',
+          path: '9-algorithm/',
+        },
+        {
+          title: '渲染机制',
+          path: '10-rendering/',
+        },
+        {
+          title: 'JS执行机制',
+          path: '11-execution/',
+        },
+        {
+          title: '性能优化',
+          path: '12-performance/',
+        },
+        {
+          title: '错误捕获',
+          path: '13-errorhandling/',
+        },
       ],
       '/frame/': [
         {
