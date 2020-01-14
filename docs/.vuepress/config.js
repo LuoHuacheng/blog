@@ -1,4 +1,5 @@
 module.exports = {
+  base: '/blog/',
   title: 'HC的前端之旅',
   description: 'Javascript, HTML, CSS, Vue, React, Flutter, NodeJs, 前端技术',
   themeConfig: {
