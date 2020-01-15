@@ -10,13 +10,13 @@
 
 给其父元素设置 _text-align: center;_
 
-```css
-.parent-line {
-  text-align: center;
-}
-```
-
 ```html
+<style>
+  .parent-line {
+    text-align: center;
+  }
+</style>
+
 <div class="parent-line">
   行内元素水平居中——text-align
 </div>
@@ -25,126 +25,153 @@
 ### 块级元素
 
 - 宽度固定的块级元素
+
   1. 给其本身设置 _margin: 0 auto;_
-     ```css
-     .item-center-margin {
-       margin: 0 auto;
-       width: 300px;
-       border: 2px solid red;
-     }
-     ```
+
      ```html
+     <style>
+       .item-center-margin {
+         margin: 0 auto;
+         width: 300px;
+         border: 2px solid red;
+       }
+     </style>
+
      <div class="item-center-margin">
        宽度固定的块级水平居中——margin
      </div>
      ```
+
   2. 给其本身设置 _position_ 和 _负 margin_
-     ```css
-     .item-center-position-negative-margin {
-       position: absolute;
-       margin-left: -150px;
-       width: 300px;
-       border: 2px solid red;
-     }
-     ```
+
      ```html
+     <style>
+       .item-center-position-negative-margin {
+         position: absolute;
+         margin-left: -150px;
+         width: 300px;
+         border: 2px solid red;
+       }
+     </style>
+
      <div class="item-center-position-negative-margin">
        宽度固定的块级水平居中——position && negative-margin
      </div>
      ```
+
   3. 给其本身设置 _position_ 和 _margin_，和第一种相似
-     ```css
-     .item-center-position-margin {
-       position: absolute;
-       left: 0;
-       right: 0;
-       margin: auto;
-       width: 300px;
-       border: 2px solid red;
-     }
-     ```
+
      ```html
+     <style>
+       .item-center-position-margin {
+         position: absolute;
+         left: 0;
+         right: 0;
+         margin: auto;
+         width: 300px;
+         border: 2px solid red;
+       }
+     </style>
+
      <div class="item-center-position-margin">
        宽度固定的块级水平居中——position && margin
      </div>
      ```
+
 - 宽度不固定的块级元素，两种思路，设置其本身或父元素的 _display_ 属性，设置 _position_ 和 _transform_
+
   1. 给其本身设置 _display: table;_
-     ```css
-     .item-center-table {
-       display: table;
-       margin: 0 auto;
-       border: 2px solid red;
-     }
-     ```
+
      ```html
+     <style>
+       .item-center-table {
+         display: table;
+         margin: 0 auto;
+         border: 2px solid red;
+       }
+     </style>
+
      <div class="item-center-table">
        宽度不固定的块级水平居中——table
      </div>
      ```
+
   2. 给其本身设置 _display: inline-block;_
-     ```css
-     .parent-inline-block {
-       text-align: center;
-     }
-     .item-center-inline-block {
-       display: inline-block;
-       border: 2px solid red;
-     }
-     ```
+
      ```html
+     <style>
+       .parent-inline-block {
+         text-align: center;
+       }
+       .item-center-inline-block {
+         display: inline-block;
+         border: 2px solid red;
+       }
+     </style>
+
      <div class="parent-inline-block">
        <div class="item-center-inline-block">
          宽度不固定的块级水平居中——inline-block
        </div>
      </div>
      ```
+
   3. 给其父元素设置 _display: flex;_
-     ```css
-     .parent-flex {
-       display: flex;
-       justify-content: center;
-     }
-     .item-center-flex {
-       border: 2px solid red;
-     }
-     ```
+
      ```html
+     <style>
+       .parent-flex {
+         display: flex;
+         justify-content: center;
+       }
+       .item-center-flex {
+         border: 2px solid red;
+       }
+     </style>
+
      <div class="parent-flex">
        <div class="item-center-flex">
          宽度不固定的块级水平居中——flex
        </div>
      </div>
      ```
+
   4. 给其父元素设置 _display: grid;_
-     ```css
-     .parent-grid {
-       display: grid;
-       grid-template-columns: auto; /* 宽度为auto的一列 */
-       justify-items: center;
-       /* align-items: center; // 垂直居中 */
-     }
-     .item-center-grid {
-       border: 2px solid red;
-     }
-     ```
+
      ```html
+     <style>
+       .parent-grid {
+         display: grid;
+         /* 宽度为auto的一列 */
+         grid-template-columns: auto;
+         justify-items: center;
+         /* 垂直居中 */
+         /* align-items: center; */
+       }
+       .item-center-grid {
+         border: 2px solid red;
+       }
+     </style>
+
      <div class="parent-grid">
        <div class="item-center-grid">
          宽度不固定的块级水平居中——grid
        </div>
      </div>
      ```
+
   5. 给其本身设置 _position_ 和 _transform_
-     ```css
-     .item-center-position-transform {
-       position: absolute;
-       left: 50%;
-       transform: translateX(-50%);
-       border: 2px solid red;
-     }
-     ```
+
      ```html
+     <style>
+       .item-center-position-transform {
+         position: absolute;
+         left: 50%;
+         transform: translateX(-50%);
+         border: 2px solid red;
+       }
+     </style>
+
      <div class="item-center-position-transform">
        宽度不固定的块级水平居中——position && transform
      </div>
@@ -155,31 +182,38 @@
 ### 行内元素
 
 - 单行，给其本身设置 _line-height_ 或者 _paddig-top = padding-bottom_
-  ```css
-  .inline-center-vertical {
-    line-height: 28px; /* 或者 padding: 10px 0; */
-    border: 2px solid red;
-  }
-  ```
+
   ```html
+  <style>
+    .inline-center-vertical {
+      line-height: 28px; /* 或者 padding: 10px 0; */
+      border: 2px solid red;
+    }
+  </style>
+
   <span class="inline-center-vertical">
     单行文本居中——line-height || paddig-top = padding-bottom
   </span>
   ```
+
 - 多行，给其本身设置 _table-cell_，父元素设置 _display: table_
-  ```css
-  .inline-parent-center-vertical {
-    display: table;
-    height: 300px; /* 父元素需要设置高度 */
-    /* text-align: center; // 水平居中 */
-    border: 2px solid red;
-  }
-  .inline-item-center-vertical {
-    display: table-cell;
-    vertical-align: middle;
-  }
-  ```
+
   ```html
+  <style>
+    .inline-parent-center-vertical {
+      display: table;
+      /* 父元素需要设置高度 */
+      height: 300px;
+      /* 水平居中 */
+      /* text-align: center; */
+      border: 2px solid red;
+    }
+    .inline-item-center-vertical {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  </style>
+
   <div class="inline-parent-center-vertical">
     <span class="inline-multiple-center-vertical">
       多行文本居中——table && height && table-cell && vertical
