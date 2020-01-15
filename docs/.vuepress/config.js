@@ -23,7 +23,10 @@ module.exports = {
         },
         {
           title: '盒模型',
-          path: '2-box/',
+          children: [
+            '2-box/box-model',
+            '2-box/bfc',
+          ],
         },
         {
           title: 'DOM事件',
