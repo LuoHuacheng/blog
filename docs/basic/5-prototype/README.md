@@ -39,7 +39,7 @@ JavaScript 规定，所有对象都有自己的原型对象（prototype），一
 - 每个函数都有 prototype 属性，函数在声明的时候 JS 引擎会初始化一个空对象给 prototype（原型对象）
 - 原型对象中有 contructor 属性，默认指向引用其自身的函数（构造函数）
 
-![prototype_1](/prototype_1.png "原型、构造函数、实例、原型链的关系")
+![prototype_1](/prototype_1.png '原型、构造函数、实例、原型链的关系')
 
 ## instanceof 原理
 
@@ -47,7 +47,7 @@ JavaScript 规定，所有对象都有自己的原型对象（prototype），一
 - instanceOf 的原理是判断实例对象的 `__proto__` 和构造函数的 prototype 是不是统一引用
 - 同一条原型链上使用 instanceOf 判断都会返回 true，此时可以使用 `__proto__.constructor` 判定
 
-![prototype_2](/prototype_2.png "instanceof 原理")
+![prototype_2](/prototype_2.png 'instanceof 原理')
 
 ## new 运算符
 
@@ -65,14 +65,14 @@ function _new() {
   const args = [].slice.call(arguments);
   // 取出构造函数
   const constructor = args.shift();
-  if (typeof constructor !== "function") {
-    throw "constructor param must be a function";
+  if (typeof constructor !== 'function') {
+    throw 'constructor param must be a function';
   }
   // 创建一个空对象，继承构造函数的 prototype 属性
   const context = Object.create(constructor.prototype);
   // 执行构造函数
   const result = constructor.apply(context, args);
   // 如果返回结果是对象，就直接返回，否则返回 context 对象
-  return typeof result === "object" && result != null ? result : context;
+  return typeof result === 'object' && result != null ? result : context;
 }
 ```

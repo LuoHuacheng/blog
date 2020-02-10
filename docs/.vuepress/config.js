@@ -41,7 +41,7 @@ module.exports = {
           path: '5-prototype/',
         },
         {
-          title: '对向对象',
+          title: '面向对象',
           path: '6-oop/',
         },
         {

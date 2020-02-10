@@ -42,9 +42,9 @@ _监听函数内部的 this 指向触发事件的那个元素节点_
   <li>4</li>
 </ul>
 <script>
-  const ul = document.querySelector("ul");
-  ul.addEventListener("click", function(event) {
-    if (event.target.tagName.toLowerCase() === "li") {
+  const ul = document.querySelector('ul');
+  ul.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() === 'li') {
       // some code
     }
   });
@@ -62,9 +62,9 @@ DOM 事件一般分为 3 个等级，依次为 DOM0 ，DOM2 及 DOM3 三个等�
 ```html
 <button id="btn" type="button"></button>
 <script>
-  const btn = document.getElementById("btn");
+  const btn = document.getElementById('btn');
   btn.onclick = function() {
-    console.log("Hello World");
+    console.log('Hello World');
   };
 </script>
 ```
@@ -78,12 +78,12 @@ DOM 事件一般分为 3 个等级，依次为 DOM0 ，DOM2 及 DOM3 三个等�
 ```html
 <button id="btn" type="button"></button>
 <script>
-  const btn = document.getElementById("btn");
-  btn.addEventListener("click", () => {
-    console.log("hello");
+  const btn = document.getElementById('btn');
+  btn.addEventListener('click', () => {
+    console.log('hello');
   });
-  btn.addEventListener("click", () => {
-    console.log("world");
+  btn.addEventListener('click', () => {
+    console.log('world');
   });
   // hello
   // world
