@@ -61,7 +61,7 @@ module.exports = {
           path: '10-rendering/',
         },
         {
-          title: 'JS执行机制',
+          title: 'JS运行机制',
           path: '11-execution/',
         },
         {

@@ -21,6 +21,13 @@
 
 属性 width，height 包含 border 和 padding，指的是 _content + padding + border_ ，其 _box-sizing_ 属性是 _border-box_
 
+## 获取元素尺寸
+
+- `dom.style.width/height` 只能获取内联样式
+- `dom.currentStyle.width/height` 获取所有样式宽高，只有 IE 支持
+- `window.getComputedStyle(dom)` 获取所有样式宽高，现代浏览器支持
+- `dom.getBoundingClientRect()` 返回元素的宽高及相对于视口的位置
+
 :::warning 注意
 浏览器渲染页面是根据 html 页面头部的 _DOCTYPE_ 声明来执行的，所以开发时一定要声明页面的 _DOCTYPE_
 :::
