@@ -20,13 +20,13 @@
 
 Asynchronous JavaScript and XML 同源通信
 
-1. 创建 XMLHTTPRequest 对象 xhr = new XMLHttpRequest()<br>
-   兼容 IE：new window.ActiveXObject('Microsoft.XMLHTTP')
-2. 使用 open 方法设置请求的参数：xhr.open(method, url, 是否异步)<br>
-   GET 与 POST 传输数据格式以及请求头设置<br>
-   xhr.setRequestHeader('Content-Type': 'application/x-www-form=urlencoded')
+1. 创建 XMLHTTPRequest 对象 `xhr = new XMLHttpRequest()`<br>
+   兼容 IE：`new window.ActiveXObject('Microsoft.XMLHTTP')`
+2. 使用 `open` 方法设置请求的参数：`xhr.open(method, url, 是否异步)`<br>
+   `GET` 与 `POST` 传输数据格式以及请求头设置<br>
+   `xhr.setRequestHeader('Content-Type': 'application/x-www-form=urlencoded')`
 3. 发送请求 xhr.send()
-4. 注册事件 xhr.onreadystatechange 事件监听请求的状态 xhr.readyState 和 xhr.status
+4. 注册事件 xhr.onreadystatechange 事件监听请求的状态 `xhr.readyState` 和 `xhr.status`
 5. 获取返回的数据并操作
 
 ```js
@@ -104,7 +104,7 @@ ajax(
 - 数据格式轻量、性能开销小、通信高效
 - 可发送文本，也可发送二进制数据
 - 无同源限制，客户端可以与任意服务器通信
-- 协议标识为 ws 或 wss
+- 协议标识为 `ws` 或 `wss`
 - 服务器可主动向客户端发送数据
 
 客户端实现：
@@ -135,14 +135,14 @@ Corss-Origin Resource Sharing 支持跨域与同源
 
 - CORS 默认不带身份凭证，需要前端设置 withCredentials=true 来使请求发送凭据
 - 附带凭证后
-  1. 服务端 Access-Control-Allow-Origin 不能设置为 \*
-  2. 服务端 Access-Control-Allow-Credentials 需要设置为 true
+  1. 服务端 `Access-Control-Allow-Origin` 不能设置为 \*
+  2. 服务端 `Access-Control-Allow-Credentials` 需要设置为 true
 
 ## 跨域通信
 
 - JSONP(JSON Padding)
 
-  - 利用 _script_ 标签跨域，由服务端返回预先设定好的全局函数的调用，并将服务端数据以参数传递
+  - 利用 `script` 标签跨域，由服务端返回预先设定好的全局函数的调用，并将服务端数据以参数传递
   - 只能用于 GET 请求，且在接收数据处理完后要删除这个全局变量
 
   ```html
